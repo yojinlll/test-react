@@ -1,2 +1,2 @@
-console.log('hi');
-const webpack:String = 'webpack'
+import React from 'react'
+import ReactDom from 'react-dom'
