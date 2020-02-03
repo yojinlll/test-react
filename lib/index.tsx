@@ -3,5 +3,5 @@ import ReactDOM from 'react-dom'
 import Icon from './icon'
 
 ReactDOM.render(<div>
-  <Icon name='fuck'/>
+  <Icon name='github'/>
 </div>, document.getElementById('root'))
