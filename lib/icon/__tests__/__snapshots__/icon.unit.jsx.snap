@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon render svg  1`] = `
+<svg
+  className="miro-icon"
+>
+  <use
+    xlinkHref="#github"
+  />
+</svg>
+`;
