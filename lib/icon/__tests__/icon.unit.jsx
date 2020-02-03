@@ -11,8 +11,7 @@ describe('Icon', ()=>{
   it('onClick ', ()=>{
     const fn = jest.fn()
     const component = mount(<Icon name='github' onClick={fn}/>)
-    console.log(component.find('svg'))
     component.find('svg').simulate('click')
-    expect(fn).toBeCalled()
+    expect(fn).toBeCalled
   })
 })
