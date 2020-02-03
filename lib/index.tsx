@@ -1,7 +1,7 @@
 import React from 'react'
-import ReactDom from 'react-dom'
-import Button from './button'
+import ReactDOM from 'react-dom'
+import Icon from './icon'
 
-const test = 'test'
-console.log(test);
-ReactDom.render(<Button></Button>, document.getElementById('root'))
+ReactDOM.render(<div>
+  <Icon name='fuck'/>
+</div>, document.getElementById('root'))
