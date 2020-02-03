@@ -7,5 +7,5 @@ const fn:React.MouseEventHandler = (e)=>{
 }
 
 ReactDOM.render(<div>
-  <Icon name='github' onClick={fn}/>
+  <Icon name='github' onClick={fn} className='hi' />
 </div>, document.getElementById('root'))
