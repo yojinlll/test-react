@@ -1,11 +1,13 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Icon from './icon/icon'
+export {default as Icon} from './icon/icon'
 
-const fn:React.MouseEventHandler = (e)=>{
-  console.log('fn', e.target);
-}
+// import React from 'react'
+// import ReactDOM from 'react-dom'
+// import Icon from './icon/icon'
 
-ReactDOM.render(<div>
-  <Icon name='github' onClick={fn} className='hi' />
-</div>, document.getElementById('root'))
+// const fn:React.MouseEventHandler = (e)=>{
+//   console.log('fn', e.target);
+// }
+
+// ReactDOM.render(<div>
+//   <Icon name='github' onClick={fn} className='hi' />
+// </div>, document.getElementById('root'))
