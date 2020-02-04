@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="6" failures="0" time="2.542">
-  <testsuite name="classes" errors="0" failures="0" skipped="0" timestamp="2020-02-03T12:37:18" time="1.413" tests="4">
+<testsuites name="jest tests" tests="6" failures="0" time="3.684">
+  <testsuite name="classes" errors="0" failures="0" skipped="0" timestamp="2020-02-03T13:47:10" time="1.632" tests="4">
     <testcase classname="classes 接受 1 个 className" name="classes 接受 1 个 className" time="0.002">
     </testcase>
     <testcase classname="classes 接受 2 个 className" name="classes 接受 2 个 className" time="0.001">
@@ -10,10 +10,10 @@
     <testcase classname="classes 可以不传值" name="classes 可以不传值" time="0">
     </testcase>
   </testsuite>
-  <testsuite name="Icon" errors="0" failures="0" skipped="0" timestamp="2020-02-03T12:37:18" time="1.519" tests="2">
+  <testsuite name="Icon" errors="0" failures="0" skipped="0" timestamp="2020-02-03T13:47:10" time="1.696" tests="2">
     <testcase classname="Icon render svg " name="Icon render svg " time="0.012">
     </testcase>
-    <testcase classname="Icon onClick " name="Icon onClick " time="0.033">
+    <testcase classname="Icon onClick " name="Icon onClick " time="0.034">
     </testcase>
   </testsuite>
 </testsuites>
