@@ -44,13 +44,15 @@ jobs:
       - run: yarn ci
       - store_test_results:
           path: test-results
-  publish:
-    <<: *defaults
-    steps:
-      - attach_workspace:
-          at: .
-      - run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
-      - run: npm publish
+          
+  # 版本发布更新，需要修改 package.json
+  # publish:
+  #   <<: *defaults
+  #   steps:
+  #     - attach_workspace:
+  #         at: .
+  #     - run: npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+  #     - run: npm publish
 
 
 workflows:
@@ -64,6 +66,6 @@ workflows:
       - test:
           requires:
             - prepare
-      - publish:
-          requires:
-            - build
+      # - publish:
+      #     requires:
+      #       - build
