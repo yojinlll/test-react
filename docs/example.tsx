@@ -1,15 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import IconExample from './examples/icon.example'
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 
-// const fn:React.MouseEventHandler = (e)=>{
-//   console.log('fn', e.target);
-// }
-
-// ReactDOM.render(<div>
-//   <Icon name='github' onClick={fn} className='hi' />
-// </div>, document.getElementById('root'))
+import IconExample from './examples/icon.example'
+import DialogExample from './examples//dialog/dialog.example'
 
 ReactDOM.render(
   <Router>
@@ -26,10 +20,14 @@ ReactDOM.render(
             <li>
               <Link to="/icon">Icon</Link>
             </li>
+            <li>
+              <Link to="/dialog">Dialog</Link>
+            </li>
           </ul>
         </aside>
         <main>
           <Route path='/icon' component={IconExample} />
+          <Route path='/dialog' component={DialogExample} />
         </main>
       </div>
     </div>

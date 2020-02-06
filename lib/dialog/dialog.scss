@@ -1,0 +1,39 @@
+.miro-dialog{
+  position: fixed;
+  background-color: #fff;
+  width: 520px;
+  border-radius: 4px;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+
+  &-mask{
+    border: 1px solid blue;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: fade-out(black, 0.5);
+  }
+  &-header{
+    padding: 16px 24px;
+    border-bottom: 1px solid #e8e8e8;
+    position: relative;
+  }
+  &-main{
+    padding: 24px;
+  }
+  &-footer{
+    padding: 16px 24px;
+    border-top: 1px solid #e8e8e8;
+    display: flex;
+    justify-content: flex-end;
+
+    .miro-button:first-child{
+      margin-right: 12px;
+    }
+  }
+}
+
+@media (max-width: 767px){
+  .miro-dialog{
+    width: calc( 100vw - 16px);
+  }
+}
