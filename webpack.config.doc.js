@@ -7,10 +7,15 @@ module.exports = Object.assign({}, base, {
   entry: {
     example: "./example/example.tsx"
   },
+  output:{
+    path: path.resolve(__dirname, 'doc'),
+    filename: 'doc.js'
+  },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'miro-dev',
+      title: 'miro-doc',
       template: './example/index.html',
+      filename: 'doc.html',
     })
   ]
 })
