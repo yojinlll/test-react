@@ -1,29 +1,55 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
+import classes from '../helpers/classes'
+import Input from '../input/input'
+import './form.scss'
+
 
 interface Props extends React.HTMLAttributes<HTMLElement> {
-  children: ReactElement | Array<ReactElement>
+  value: { [key: string]: any },
+  fields: Array<{ name: string, label: string, input: { type: string } }>
+  buttons: React.ReactFragment,
+  onSubmit: React.FormEventHandler<HTMLFormElement>
+  onChange: (value: Props["value"]) => void
 }
 
 const Form: React.FunctionComponent<Props> = (props) => {
-
-  const hasAside: () => void | string = () => {
-    if ((props.children as Array<ReactElement>).length) {
-      console.log(props.children);
-      const hasAside = (props.children as Array<ReactElement>).reduce((result, node) => {
-        return result || node.type === "span"
-      }, false)
-
-      return hasAside ? "hasAside" : undefined
-    }
-    return 
+  const formData = props.value
+  const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    props.onSubmit(e)
+  }
+  const onInputChaneg = (name: string, event: React.ChangeEvent<HTMLInputElement>) => {
+    const newFormData = { ...formData, [name]: event.target.value }
+    props.onChange(newFormData)
   }
 
   return (
-    <div>
-      <h1 style={{ border: "1px solid red" }} className={`layout ${hasAside()}`}>
-        {props.children}
-      </h1>
-    </div>
+    <form onSubmit={onSubmit}>
+      <table>
+        {
+          props.fields.map((item, index) => {
+            return (
+              <tr key={index} className={classes('miro-form-row')}>
+                <td>
+                  {item.label}
+                </td>
+                <td>
+                  <Input
+                    type={item.input.type}
+                    value={formData[item.name]}
+                    // onChange={e => onInputChaneg(item.name, e.target.value)}
+                    onChange={onInputChaneg.bind(null, item.name)}
+                  />
+                </td>
+              </tr>
+            )
+          })
+        }
+      </table>
+      <div>
+        {props.buttons}
+      </div>
+    </form>
   )
 }
 
