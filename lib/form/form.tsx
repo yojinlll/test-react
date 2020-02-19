@@ -14,6 +14,8 @@ interface Props extends React.HTMLAttributes<HTMLElement> {
 
 const Form: React.FunctionComponent<Props> = (props) => {
   const formData = props.value
+  const className = props.className
+  
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     props.onSubmit(e)
@@ -24,12 +26,12 @@ const Form: React.FunctionComponent<Props> = (props) => {
   }
 
   return (
-    <form onSubmit={onSubmit}>
+    <form onSubmit={onSubmit} className={classes('miro-form', className)}>
       <table>
         {
           props.fields.map((item, index) => {
             return (
-              <tr key={index} className={classes('miro-form-row')}>
+              <tr key={index} className="miro-form-row">
                 <td>
                   {item.label}
                 </td>
@@ -45,10 +47,15 @@ const Form: React.FunctionComponent<Props> = (props) => {
             )
           })
         }
+        <tr className="miro-form-row">
+          <td/>
+          <td>
+            <div style={{display: 'flex', justifyContent: 'space-between'}}>
+              {props.buttons}
+            </div>
+          </td>
+        </tr>
       </table>
-      <div>
-        {props.buttons}
-      </div>
     </form>
   )
 }

@@ -1,4 +1,4 @@
-import {FormValue} from './form'
+// import {FormValue} from './form'
 
 interface FormRule{
   key: string
@@ -7,6 +7,9 @@ interface FormRule{
   maxLength?: number
 }
 interface FormErrors{
+  
+}
+interface FormValue{
   
 }
 

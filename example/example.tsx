@@ -6,6 +6,7 @@ import IconExample from './examples/icon.example'
 import DialogExample from './examples/dialog/dialog.example'
 import FormExample from './examples/form/form.example'
 import InputExample from './examples/input/input.example'
+import ButtonExample from './examples/button/button.example'
 
 ReactDOM.render(
   <Router>
@@ -31,6 +32,9 @@ ReactDOM.render(
             <li>
               <Link to="/input">Input</Link>
             </li>
+            <li>
+              <Link to="/button">Button</Link>
+            </li>
           </ul>
         </aside>
         <main>
@@ -38,6 +42,7 @@ ReactDOM.render(
           <Route path='/dialog' component={DialogExample} />
           <Route path='/form' component={FormExample} />
           <Route path='/input' component={InputExample} />
+          <Route path='/button' component={ButtonExample} />
         </main>
       </div>
     </div>

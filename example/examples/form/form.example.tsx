@@ -1,6 +1,7 @@
 import React, { useState, Fragment } from 'react'
 import Form from '../../../lib/form/form'
 import Validator from '../../../lib/form/validator'
+import { Button } from '../../../lib/index'
 
 const FormExample: React.FunctionComponent = () => {
   const [formData, setFormData] = useState<{ [key: string]: any }>({
@@ -33,8 +34,8 @@ const FormExample: React.FunctionComponent = () => {
         onChange={(newData) => { setFormData(newData) }}
         buttons={
           <Fragment>
-            <button type="submit">提交</button>
-            <button>返回</button>
+            <Button type="submit" level="primary">提交</Button>
+            <Button>返回</Button>
           </Fragment>
         }
       />
