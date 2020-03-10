@@ -1,6 +1,6 @@
 import React, { useState, Fragment } from 'react'
 import Form from '../../../lib/form/form'
-import Validator from '../../../lib/form/validator'
+// import Validator from '../../../lib/form/validator'
 import { Button } from '../../../lib/index'
 
 const FormExample: React.FunctionComponent = () => {
@@ -14,11 +14,8 @@ const FormExample: React.FunctionComponent = () => {
   ])
   const onSubmit = (e: React.FormEvent) => {
     console.log(formData);
-    const rules = [
-      {key: 'username', required: true}
-    ]
-    const errors = Validator(formData, rules)
-    console.log(errors, 'error');
+    // const errors = Validator(formData, rules)
+    // console.log(errors, 'error');
   }
 
   return (
@@ -28,7 +25,6 @@ const FormExample: React.FunctionComponent = () => {
         <p>password: {formData.password}</p>
       </div>
       <Form value={formData}
-        className="fuck"
         fields={fields}
         onSubmit={onSubmit}
         onChange={(newData) => { setFormData(newData) }}

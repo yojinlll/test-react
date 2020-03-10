@@ -27,34 +27,38 @@ const Form: React.FunctionComponent<Props> = (props) => {
 
   return (
     <form onSubmit={onSubmit} className={classes('miro-form', className)}>
-      <table>
-        {
-          props.fields.map((item, index) => {
-            return (
-              <tr key={index} className="miro-form-row">
-                <td>
-                  {item.label}
-                </td>
-                <td>
-                  <Input
-                    type={item.input.type}
-                    value={formData[item.name]}
-                    // onChange={e => onInputChaneg(item.name, e.target.value)}
-                    onChange={onInputChaneg.bind(null, item.name)}
-                  />
-                </td>
-              </tr>
-            )
-          })
-        }
-        <tr className="miro-form-row">
-          <td/>
-          <td>
-            <div style={{display: 'flex', justifyContent: 'space-between'}}>
-              {props.buttons}
-            </div>
-          </td>
-        </tr>
+      <table className="miro-form-table">
+        <tbody>
+          {
+            props.fields.map((item, index) => {
+              return (
+                <tr key={index} className="miro-form-tr">
+                  <td className="miro-form-td">
+                    <span className="miro-form-label">
+                      {item.label}
+                    </span>
+                  </td>
+                  <td className="miro-form-td">
+                    <Input
+                      type={item.input.type}
+                      value={formData[item.name]}
+                      // onChange={e => onInputChaneg(item.name, e.target.value)}
+                      onChange={onInputChaneg.bind(null, item.name)}
+                    />
+                  </td>
+                </tr>
+              )
+            })
+          }
+          <tr className="miro-form-tr">
+            <td className="miro-form-td"/>
+            <td className="miro-form-td">
+              <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                {props.buttons}
+              </div>
+            </td>
+          </tr>
+        </tbody>
       </table>
     </form>
   )
