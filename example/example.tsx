@@ -7,6 +7,7 @@ import DialogExample from './examples/dialog/dialog.example'
 import FormExample from './examples/form/form.example'
 import InputExample from './examples/input/input.example'
 import ButtonExample from './examples/button/button.example'
+import ScrollExample from './examples/scroll/scroll.example'
 
 ReactDOM.render(
   <Router>
@@ -35,6 +36,9 @@ ReactDOM.render(
             <li>
               <Link to="/button">Button</Link>
             </li>
+            <li>
+              <Link to="/scroll">Scroll</Link>
+            </li>
           </ul>
         </aside>
         <main>
@@ -43,6 +47,7 @@ ReactDOM.render(
           <Route path='/form' component={FormExample} />
           <Route path='/input' component={InputExample} />
           <Route path='/button' component={ButtonExample} />
+          <Route path='/scroll' component={ScrollExample} />
         </main>
       </div>
     </div>
